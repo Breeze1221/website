@@ -2,579 +2,165 @@
 <html lang="zh-CN">
 
 <head>
-    <!-- 基础信息 -->
-    <meta charset="utf-8">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <!-- 强制 HTTPS，若不需要可删除，但可能出现问题 -->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="renderer" content="webkit" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="force-rendering" content="webkit" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#424242" />
-    <meta name="description" content="星启|MyIndex">
-    <meta name="keywords" content="Index">
-    <meta name="author" content="星启">
-    <title>星启|MyIndex</title>
-    <!-- jQuery -->
-    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/jquery/3.5.1/jquery.min.js"></script>
-    <!-- HarmonyOS Sans -->
-    <!-- 本站 CDN 已开启防盗链，非本站域名不可访问，请更改链接为下方内容，否则自定义字体将失效 -->
-    <!-- https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css -->
-    <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
-    <!-- 引入样式 -->
-    <link rel="stylesheet" type="text/css"
-        href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/mobile.css">
-    <link rel="stylesheet" type="text/css" href="./css/loading.css">
-    <link rel="stylesheet" type="text/css" href="./css/animation.css">
-    <link rel="icon" href="./favicon.ico">
-    <link rel="apple-touch-icon" href="./img/icon/apple-touch-icon.png">
-    <!-- Izitoast -->
-    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css">
-    <script type="text/javascript"
-        src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/js/iziToast.min.js">
-    </script>
-    <!-- Search Box -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <!-- Aplayer -->
-    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.js" crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-    <!-- <script src="./js/Meting.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- IE Out -->
-    <script>
-        if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
-            "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
-    </script>
-    <!-- PWA -->
-    <link rel="manifest" href="/manifest.json">
-    <!-- 51.LA 统计 -->
-    <script src="./js/51LA.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星启 - 用设计赋能程序</title>
+  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="icon" type="image/x-icon" href="static/picture/icon.webp">
+  <link rel="apple-touch-icon" href="static/picture/icon.webp">
+  <meta name="apple-mobile-web-app-title" content="星启">
+  <link rel="bookmark" href="static/picture/icon.webp">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="static/picture/icon.webp">
+  <meta name="description" content="寻找更贴近直觉的路径和方向，并用行动去突破，去改变，去创造。星启所有产品的导航网站。">
+  <meta name="theme-color" content="#1C1C1F">
+  <link rel="stylesheet" href="static/css/iconfont.css">
+  <script src="static/js/jquery.min.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0a0cca83682044c405966961a1ff1b9b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 
-<body>
-    <!--加载动画-->
-    <div id="loading-box">
-        <div class="loading-left-bg"></div>
-        <div class="loading-right-bg"></div>
-        <div class="spinner-box">
-            <div class="loader">
-                <div class="inner one"></div>
-                <div class="inner two"></div>
-                <div class="inner three"></div>
-            </div>
-            <div class="loading-word">
-                <p class="loading-title" id="loading-title">星启|Index</p>
-                <span id="loading-text">Loading......</span>
-            </div>
-        </div>
+<body id="body">
+  <div class="nav">
+    <div class="nav-content">
+      <div class="nav-left">
+        <a href="javascript:scrollToTopWithAnimation()" class="site-logo">
+          <img src="static/picture/icon.webp" alt="logo" class="site-logo-img">
+          <span class="site-name">星启</span>
+        </a>
+      </div>
+      <div class="nav-center">
+        <a href="javascript:heoWeb.scrollTo('应用');" class="nav-item">应用</a>
+        <a href="javascript:heoWeb.scrollTo('媒体');" class="nav-item">媒体</a>
+        <a href="javascript:heoWeb.scrollTo('服务');" class="nav-item">服务</a>
+        <a href="javascript:heoWeb.scrollTo('主题');" class="nav-item">主题</a>
+        <a href="javascript:heoWeb.scrollTo('表情');" class="nav-item">表情</a>
+        <a href="javascript:heoWeb.scrollTo('项目');" class="nav-item">项目</a>
+        <a href="javascript:heoWeb.scrollTo('更多');" class="nav-item">更多</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://blog.zhheo.com/" class="nav-item" target="_blank">博客</a>
+        <a href="https://plog.zhheo.com/" class="nav-item" target="_blank">图集</a>
+        <a class="nav-menu" id="nav-menu"><span class="heofont icon-menu-fill"></span></a>
+      </div>
     </div>
-    <section id="section" class="section">
-        <!-- 背景图片 -->
-        <style type="text/css">
-            body{
-              background: url("img/background1.webp") no-repeat center center fixed;
-                          /*兼容浏览器版本*/
-                          -webkit-background-size: cover;
-                          -o-background-size: cover;                
-                          background-size: cover;
-            } /*背景图*/
-       
-            .test {
-              margin-top: 100px;
-            }
-          </style>
-        <!-- 鼠标指针 -->
-        <div id="g-pointer-1"></div>
-        <div id="g-pointer-2"></div>
-        <!-- 主体内容 -->
-        <main id="main" class="main">
-            <!-- 搜索框 -->
-            <div class="close-btn">
-                <span class="fas fa-times"></span>
-            </div>
-            <div class="search-btn">
-                <span class="fas fa-search"></span>
-            </div>
-            <div class="search-data">
-                <input type="text" id="inp" required/>
-                <div class="line"></div>
-                <label>Type to search...</label>
-                <span class="fas fa-search" id="btn"></span>
-            </div>
+  </div>
+  <div class="menu-list" id="menu-list">
+    <a href="https://blog.zhheo.com/" class="nav-item" target="_blank">博客</a>
+    <a href="https://plog.zhheo.com/" class="nav-item" target="_blank">图集</a>
+    <a href="javascript:heoWeb.scrollTo('应用');" class="nav-item">应用</a>
+    <a href="javascript:heoWeb.scrollTo('媒体');" class="nav-item">媒体</a>
+    <a href="javascript:heoWeb.scrollTo('服务');" class="nav-item">服务</a>
+    <a href="javascript:heoWeb.scrollTo('主题');" class="nav-item">主题</a>
+    <a href="javascript:heoWeb.scrollTo('表情');" class="nav-item">表情</a>
+    <a href="javascript:heoWeb.scrollTo('项目');" class="nav-item">项目</a>
+    <a href="javascript:heoWeb.scrollTo('更多');" class="nav-item">更多</a>
+  </div>
+  <!-- <div class="nav-banner">
+    <a class="nav-banner-text" href="https://blog.zhheo.com/p/671f98c8.html" target="_blank">敲木鱼 现已登录 App Store <span
+        class="heofont icon-arrow-right-s-line" style="font-size: 16px;"></span></a>
+  </div> -->
 
-            <script>
-                var oInp = document.getElementById('inp');
-                var oBtn = document.getElementById('btn');
-            
-                oBtn.onclick = function () {
-                    Search();
-                }
-            
-                document.onkeydown = function () {
-                    if (event.keyCode == 13) {
-                        Search();
-                    }
-                }
-            
-                function Search() {
-                    var url = 'https://cn.bing.com/search?q=' + oInp.value;
-                    window.open(url,'_self');
-                }
-            </script>
+  <div class="first-stack need-padding">
+    <div class="left-Introduce">
+      <div class="title-group">
+        <span class="title">XING QI HOME</span>
+        <span class="title"></span>
+      </div>
+      <div class="discription">
+        <span class="discription-text">让设计师主导<span class="inline-word">产品，</span><br>来构建令人难忘的<span class="inline-word">体验。</span></span>
+      </div>
+      <div class="first-stack-links">
+        <a href="" class="about-button" target="_blank">了解更多</a>
+        <a href="https://github.com/breeze1221" class="about-button social-button" target="_blank">
+          <i class="heofont icon-github-line"></i>
+        </a>
+        <a href="" class="about-button social-button" target="_blank">
+          <i class="heofont icon-dribbble-line"></i>
+        </a>
+      </div>
+      
+    </div>
+    <a href="https://blog.zhheo.com/about/" class="right-stack" target="_blank">
+      <img class="banner-img" src="static/picture/封面2.webp" alt="banner" title="banner">
+    </a>
+  </div>
 
-            <script>
-                $(".search-btn").click(function(){
-                    $(this).css("display","none");
-                    $(".search-data").fadeIn(500);
-                    $(".close-btn").fadeIn(500);
-                    $(".search-data .line").addClass("active");
-                    setTimeout(function(){
-                        $("input").focus();
-                        $(".search-data label").fadeIn(500);
-                        $(".search-data span").fadeIn(500);
-                    }, 800);
-                });
-                $(".close-btn").click(function(){
-                    $(".search-btn").fadeIn(800);
-                    $(".search-data").fadeOut(500);
-                    $(".close-btn").fadeOut(500);
-                    $(".search-data .line").removeClass("active");
-                    $("input").val("");
-                    $(".search-data label").fadeOut(500);
-                    $(".search-data span").fadeOut(500);
-                });
-            </script>
-            <div class="container" id="container">
-                <div class="row" id="row">
-                    <div class="col left">
-                        <!--基本信息-->
-                        <div class="main-left">
-                            <!--Logo-->
-                            <div class="main-img">
-                                <img id="logo-img" src="./img/icon/logo.png" alt="img">
-                                <div class="img-title">
-                                    <span class="img-title-big" id="logo-text-1">星启</span>
-                                    <span class="img-text" id="logo-text-2">.io</span>
-                                </div>
-                            </div>
-                            <!--介绍信息-->
-                            <div class="message cards" id="switchmore">
-                                <div class="des" id="des">
-                                    <i class="fa-solid fa-quote-left"></i>
-                                    <div class="des-title"><span id="change">Hello&nbsp;World&nbsp;!</span><br /><span
-                                            id="change1">失败是坚忍的最后考验。</span></div>
-                                    <i class="fa-solid fa-quote-right"></i>
-                                </div>
-                            </div>
-                            <!--社交链接-->
-                            <div class="social" id="social">
-                                <a href="https://github.com/breeze1221" class="link" id="github" style="margin-left: 4px"
-                                    target="_blank">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                                <a href="https://wpa.qq.com/msgrd?v=3&uin=2257757362&site=qq&menu=yes" class="link"
-                                    id="qq" target="_blank">
-                                    <i class="fa-brands fa-qq"></i>
-                                </a>
-                                <a href="mailto:2257757362@qq.com" class="link" id="email">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </a>
-                                <a href="https://space.bilibili.com/357411980" class="link" id="bilibili"
-                                    target="_blank">
-                                    <i class="fa-brands fa-bilibili"></i>
-                                </a>
-                                <a href="https://t.me/BUPT_hs" class="link" id="telegram" target="_blank">
-                                    <i class="fa-brands fa-telegram"></i>
-                                </a>
-                                <a id="link-text">通过这里联系我</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--第二屏 Logo-->
-                    <div class="logo cards" style="display: none" id="changemore">
-                        <a class="logo-text" id="logo-text-small">imsyy.top</a>
-                    </div>
-                    <div class="col right">
-                        <div class="main-right">
-                            <!--功能区-->
-                            <div class="row rightone" id="rightone">
-                                <div class="col hitokotos">
-                                    <!--一言-->
-                                    <div class="hitokoto cards" id="hitokoto">
-                                        <!--切换音乐-->
-                                        <div class="open-music fixed-top" id="open-music">
-                                            <i class="fa-solid fa-compact-disc"></i>
-                                            <span>&nbsp;打开音乐播放器</span>
-                                        </div>
-                                        <!--切换音乐结束-->
-                                        <div class="hitokoto-all">
-                                            <div class="hitokoto-text"><span id="hitokoto_text">失败是坚忍的最后考验。</span>
-                                            </div>
-                                            <div class="hitokoto-from">-「&nbsp;<span id="from_text">星启</span>&nbsp;」
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--音乐-->
-                                    <div class="music" id="music">
-                                        <div class="music-all">
-                                            <div class="music-button">
-                                                <div id="music-open">音乐列表</div>
-                                                <div id="music-close">回到一言</div>
-                                            </div>
-                                            <div class="music-control">
-                                                <i class="fa-solid fa-backward-step" id="last"></i>
-                                                <div id="play">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                                <i class="fa-solid fa-forward-step" id="next"></i>
-                                            </div>
-                                            <div class="music-menu">
-                                                <div class="music-text">
-                                                    <span id="music-name">未播放音乐</span>
-                                                </div>
-                                                <div class="music-volume" style="display: none;">
-                                                    <div id="volume-ico">
-                                                        <i class="fa-solid fa-volume-low"></i>
-                                                    </div>
-                                                    <input type="range" min="0" max="1" step="0.01" id="volume">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col times">
-                                    <!--时间-->
-                                    <div class="time cards" id="upWeather">
-                                        <div class="timeshow" id="time">
-                                            2000&nbsp;年&nbsp;0&nbsp;月&nbsp;00&nbsp;日&nbsp;<span
-                                                class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
-                                        </div>
-                                        <div class="weather">
-                                            <span id="city_text"> </span>&nbsp;
-                                            <span id="wea_text"> </span>&nbsp;
-                                            <span id="tem_text"> </span>
-                                            <span id="win_text"> </span>
-                                            <span id="win_speed"> </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--分隔线-->
-                            <div class="line">
-                                <i class="fa-solid fa-link"></i>
-                                <span class="line-text">网站列表</span>
-                            </div>
-                            <!--网站链接-->
-                            <div class="link">
-                                <!--第一组-->
-                                <div class="row">
-                                    <div class="col">
-                                        <a id="link-url-1" href="https://www.csdn.net/" target="_blank">
-                                            <div class="link-card cards">
-                                                <i id="link-icon-1" class="fa-solid fa-blog"></i>
-                                                <span class="link-name" id="link-name-1">CSDN</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col 2">
-                                        <a id="link-url-2" href="https://pan.baidu.com/" target="_blank">
-                                            <div class="link-card cards">
-                                                <i id="link-icon-2" class="fa-solid fa-cloud"></i>
-                                                <span class="link-name" id="link-name-2">NetPan</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a id="link-url-3" href="https://music.163.com/" target="_blank">
-                                            <div class="link-card cards">
-                                                <i id="link-icon-3" class="fa-solid fa-music"></i>
-                                                <span class="link-name" id="link-name-3">Music</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!--第二组-->
-                                <div class="row" style="margin-top: 1.5rem;">
-                                    <div class="col">
-                                        <a id="link-url-4" href="https://www.bing.com/" target="_blank">
-                                            <div class="link-card cards">
-                                                <i id="link-icon-4" class="fa-solid fa-compass"></i>
-                                                <span class="link-name" id="link-name-4">Bing</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col 2">
-                                        <a id="link-url-5" href="https://openai.com/" target="_blank">
-                                            <div class="link-card cards">
-                                                <i id="link-icon-5" class="fa-solid fa-book-bookmark"></i>
-                                                <span class="link-name" id="link-name-5">OpenAI</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a id="link-url-6" href="https://github.com/arofish/Mirror-pi" target="_blank">
-                                            <div class="link-card cards">
-                                                <i id="link-icon-6" class="fa-solid fa-flask"></i>
-                                                <span class="link-name" id="link-name-6">Mirror-pi</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--展开菜单按钮-->
-                <div class="menu" id="switchmenu">
-                    <a class="munu-button cards" id="menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </a>
-                </div>
-                <!--更多内容-->
-                <div class="more" id="more">
-                    <!--关闭按钮-->
-                    <div class="close fixed-top" id="close">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </div>
-                    <div class="line" style="margin-top: 1rem;">
-                        <i class="fa-solid fa-angle-left"></i>
-                        <span class="line-text">时间胶囊</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </div>
-                    <div class="date" id="date">
-                        <div class="item" id="dayProgress">
-                            <div class="date-text" style="margin-top: 0rem;">今日已经度过了&nbsp;<span></span>&nbsp;小时</div>
-                            <div class="progress">
-                                <div class="progress-bar"></div>
-                            </div>
-                        </div>
-                        <div class="item" id="weekProgress">
-                            <div class="date-text">本周已经度过了&nbsp;<span></span>&nbsp;天</div>
-                            <div class="progress">
-                                <div class="progress-bar"></div>
-                            </div>
-                        </div>
-                        <div class="item" id="monthProgress">
-                            <div class="date-text">本月已经度过了&nbsp;<span></span>&nbsp;天</div>
-                            <div class="progress">
-                                <div class="progress-bar"></div>
-                            </div>
-                        </div>
-                        <div class="item" id="yearProgress">
-                            <div class="date-text">今年已经度过了&nbsp;<span></span>&nbsp;个月</div>
-                            <div class="progress">
-                                <div class="progress-bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <i class="fa-solid fa-angle-left"></i>
-                        <span class="line-text">杂七杂八</span>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </div>
-                    <!--网站链接-->
-                    <div class="row">
-                        <div class="col">
-                            <a href="https://www.cupfox.app/" target="_blank">
-                                <div class="link-card cards">
-                                    <span class="link-name">CupFox</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col 2">
-                            <a href="https://tool.oschina.net/highlight" target="_blank">
-                                <div class="link-card cards">
-                                    <span class="link-name">Code高亮</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="https://auth.bupt.edu.cn/" target="_blank">
-                                <div class="link-card cards">
-                                    <span class="link-name">云平台</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top: 1.5rem;">
-                        <div class="col">
-                            <a href="https://chat.forefront.ai/" target="_blank">
-                                <div class="link-card cards">
-                                    <span class="link-name">ChatGPT</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col 2">
-                            <a href="https://portals.zhihuishu.com/" target="_blank">
-                                <div class="link-card cards">
-                                    <span class="link-name">智慧树</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a id="openmore">
-                                <div class="link-card cards">
-                                    <span class="link-name">更多</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!--更多页面-->
-                <div class="box" id="box" style="display: none">
-                    <div class="box-wrapper">
-                        <!--关闭按钮-->
-                        <div class="closebox fixed-top" id="closemore">
-                            <i class="fa-solid fa-circle-xmark"></i>
-                        </div>
-                        <!--左侧内容-->
-                        <div class="box-left">
-                            <div class="img-title">
-                                <span class="img-title-big" id="logo-title-other">星启</span>
-                                <span class="img-text" id="logo-title-other-small">.io</span><br />
-                                <span class="img-text">&nbsp;v&nbsp;1.1</span>
-                                <a href="https://github.com/hsBUPT" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
-                            <!--更多内容-->
-                            <div class="accordion" id="accordion">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            壁纸设置
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            <div class="set">
-                                                <div class="wallpaper" id="wallpaper">
-                                                    <div class="form-radio">
-                                                        <input type="radio" class="set-wallpaper" style="display: none;"
-                                                            id="radio1" value="1" name="wallpaper-type">
-                                                        <label for="radio1">默认壁纸</label>
-                                                    </div>
-                                                    <div class="form-radio">
-                                                        <input type="radio" class="set-wallpaper" style="display: none;"
-                                                            id="radio2" value="2" name="wallpaper-type">
-                                                        <label for="radio2" id="wallpaper_text1">每日一图</label>
-                                                    </div>
-                                                    <div class="form-radio">
-                                                        <input type="radio" class="set-wallpaper" style="display: none;"
-                                                            id="radio3" value="3" name="wallpaper-type">
-                                                        <label for="radio3" id="wallpaper_text2">随机风景</label>
-                                                    </div>
-                                                    <div class="form-radio">
-                                                        <input type="radio" class="set-wallpaper" style="display: none;"
-                                                            id="radio4" value="4" name="wallpaper-type">
-                                                        <label for="radio4" id="wallpaper_text3">随机动漫</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--更新日志-->
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            更新日志
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            <div class="upnote">
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;添加搜索框及动画css样式
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;音乐歌单支持快速自定义
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;壁纸支持个性化设置
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-circle-plus"></i>&nbsp;音乐播放器支持音量控制
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;修复天气 API
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;时光胶囊显示错误
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;移动端动画及细节
-                                                </span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;图标更换为 Font
-                                                    Awesome</span>
-                                                <span class="uptext">
-                                                    <i class="fa-solid fa-rotate-left"></i>
-                                                    <a href="./old/" style="color:#efefef">返回旧版站点</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Aplayer-->
-                        <div class="box-right">
-                            <div id="aplayer">
-                                <span>音乐播放器加载失败</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <!-- 版权信息 -->
-        <footer id="footer" class="fixed-bottom footer">
-            <div class="power">Copyright&nbsp;©&nbsp;<span id="power-year">2022</span>
-                <script>
-                    document.write(' - ' + (new Date()).getFullYear())
-                </script>&nbsp;<a href="http://www.hsbupt.love/" id="power-text">星启|Hs</a>&nbsp;&amp;&nbsp;
-                <!-- 以下信息请不要修改哦 -->
-                Made&nbsp;⚙Modified from&nbsp;<a href="/" target="_blank">imsyy</a>
-				🔒<a href="https://beian.miit.gov.cn/">暂未备案</a>
-            </div>
-            <!-- 歌词显示 -->
-            <div id="lrc"></div>
-        </footer>
-    </section>
-    <!-- sw.js -->
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", function () {
-                navigator.serviceWorker.register("sw.js");
-            });
-        }
-    </script>
-    <!-- noscript -->
-    <noscript>
-        <div class="noscript fixed-top">请开启 JavaScript</div>
-    </noscript>
-    <!-- JS -->
-    <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="./js/set.js"></script>
-    <script type="text/javascript" src="./js/time.js"></script>
-    <script type="text/javascript" src="./js/js.cookie.js"></script>
-    <script type="text/javascript"
-        src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js">
-    </script>
-</body>
+  <div class="avatar-discription">
+    <span class="avatar-discription-text">“凡事都要脚踏实地去作，不驰于空想，不骛于虚声，而惟以求真的态度作踏实的工夫。以此态度求学，则真理可明，以此态度作事，则功业可就。”</span>
+    <img class="avatar-image" src="static/picture/avatar.jpg">
+    <span class="avatar-name">星启</span>
+    <span class="avatar-title">学生、设计与科技领域</span>
+  </div>
 
-</html>
+  <!-- 博客 -->
+  <div class="product-banner" id="博客">
+    <div class="banner-info need-padding">
+      <span class="title">个人博客</span>
+      <div class="banner-discription-group">
+        <span class="description">基于 Hexo 框架的纯静态博客平台，</span>
+        <span class="description">基于 Butterfly 主题进行了大量的魔改与美化。</span>
+      </div>
+      <div class="link-group">
+        <a class="primary-button" href="https://blog.leonus.cn/">访问项目</a>
+      </div>
+    </div>
+    <div class="banner-pic">
+      <img class="banner-pic-img" src="static/picture/banner-blog.webp" alt="banner image">
+    </div>
+  </div>
+  <!-- 文章 -->
+  <div class="product-group need-padding" id="文章">
+    <h2 class="group-title">最新文章</h2>
+    <span class="group-description">博客内最近发布的6篇文章。</span>
+    <div class="articles">
+      <div class="group-items">
+        <img src="static/picture/loading.gif" alt="加载中" style="margin: auto;">
+      </div>
+    </div>
+  </div>
+ <!-- 技能 -->
+ <div class="product-banner" id="技能" style="background-image: linear-gradient(180deg, #274DFF 0%, #6CA4FF 100%);">
+  <div class="banner-info need-padding">
+    <span class="title">技能</span>
+    <div class="banner-discription-group">
+      <span class="description">奇思妙想的<span class="inline-word">实现</span></span>
+      <span class="description">离不开<span class="inline-word">技术</span></span>
+    </div>
+    <div class="link-group">
+      <a class="primary-button" href="https://blog.leonus.cn/about/">查看更多</a>
+    </div>
+  </div>
+  <div class="banner-pic">
+    <img class="banner-pic-img" src="static/picture/banner-skill.webp" alt="banner image">
+  </div>
+</div>
+
+<div class="product-group need-padding" id="项目">
+  <h2 class="group-title">小项目</h2>
+  <span class="group-description">随便写的一些小项目</span>
+  <div class="group-items">
+
+
+    <div class="footer">
+      <div class="footer-content need-padding">
+        <span class="info">Copyright © 2021-2023 Leonus 保留所有权利。</span>
+        <div class="info-group">
+          <a class="info" href="https://beian.miit.gov.cn/" target="_blank">豫ICP备20005146号</a>
+          <a class="info" href="https://github.com/zhheo/HeoWeb" target="_blank">主题：HeoWeb</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+  <script src="static/js/simpleParallax.min.js"></script>
+  <script src="static/js/main.js"></script>
+  
+  </html>
